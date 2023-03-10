@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="379c3d44-0bac-475e-91b4-c516dbb70c7a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/clion.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/clion.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/goland.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/goland.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/intellij.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/intellij.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/pycharm.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/pycharm.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/visualStudio.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/visualStudio.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/webstorm.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/webstorm.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
