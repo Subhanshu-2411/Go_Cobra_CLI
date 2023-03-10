@@ -5,9 +5,13 @@ Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"Go_Cobra_CLI/util"
+	"errors"
 	"fmt"
-
 	"github.com/spf13/cobra"
+	"os"
+	"os/exec"
+	"path/filepath"
 )
 
 // androidCmd represents the android command
