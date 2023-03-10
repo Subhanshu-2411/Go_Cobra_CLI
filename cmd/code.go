@@ -5,6 +5,7 @@ package cmd
 
 import (
 	"Go_Cobra_CLI/util"
+	"errors"
 	"fmt"
 	"github.com/spf13/cobra"
 	"os"
@@ -19,7 +20,13 @@ var codeCmd = &cobra.Command{
 	Long: `It opens a Zipped Folder Present in your working directory 
 in Visual Studio Code with simple Arguments. Do Note to install Visual
 Studio Code on Your System`,
-	Args:                  cobra.ExactArgs(1),
+	//Args:                  cobra.ExactArgs(1),
+	Args: func(cmd *cobra.Command, args []string) error {
+		if File == "" && len(args) < 1 {
+			return errors.New("Accepts 1 argument received 0")
+		}
+		return nil
+	},
 	DisableFlagsInUseLine: true,
 	Example:               `Go_Cobra_CLI code hello.zip (or File Path)`,
 	Run: func(cmd *cobra.Command, args []string) {
@@ -27,7 +34,11 @@ Studio Code on Your System`,
 		var err error
 		var argument string
 
-		argument = args[0]
+		if File != "" {
+			argument = File
+		} else {
+			argument = args[0]
+		}
 
 		fileExists, err := util.FileExists(argument)
 
@@ -79,7 +90,7 @@ func init() {
 
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
-	// codeCmd.PersistentFlags().String("foo", "", "A help for foo")
+	codeCmd.PersistentFlags().StringVarP(&File, "file", "f", "", "File Name to be Open")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:

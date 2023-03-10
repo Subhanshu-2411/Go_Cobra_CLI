@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/clion.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/clion.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/code.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/code.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/root.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/root.go" afterDir="false" />
     </list>
