@@ -91,7 +91,7 @@ func init() {
 	// and all subcommands, e.g.:
 	// clionCmd.PersistentFlags().String("foo", "", "A help for foo")
 
-	codeCmd.PersistentFlags().StringVarP(&File, "file", "f", "", "File Name to be Open")
+	clionCmd.PersistentFlags().StringVarP(&File, "file", "f", "", "File Name to be Open")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:

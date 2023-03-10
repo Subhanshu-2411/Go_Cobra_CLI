@@ -91,7 +91,7 @@ func init() {
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
 	// golandCmd.PersistentFlags().String("foo", "", "A help for foo")
-	codeCmd.PersistentFlags().StringVarP(&File, "file", "f", "", "File Name to be Open")
+	golandCmd.PersistentFlags().StringVarP(&File, "file", "f", "", "File Name to be Open")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:

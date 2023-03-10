@@ -92,7 +92,7 @@ func init() {
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
 	// visualStudioCmd.PersistentFlags().String("foo", "", "A help for foo")
-	codeCmd.PersistentFlags().StringVarP(&File, "file", "f", "", "File Name to be Open")
+	visualStudioCmd.PersistentFlags().StringVarP(&File, "file", "f", "", "File Name to be Open")
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
