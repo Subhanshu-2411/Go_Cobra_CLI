@@ -12,16 +12,70 @@ import (
 
 // androidCmd represents the android command
 var androidCmd = &cobra.Command{
-	Use:   "android",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Use:   "android <Zipped File Name>",
+	Short: "Open a Zip Folder in CLion",
+	Long: `It opens a Zipped Folder Present in your working directory 
+in Android Studio with simple Arguments. Do Note to install Android Studio on Your System`,
+	//Args:                  cobra.ExactArgs(1),
+	Args: func(cmd *cobra.Command, args []string) error {
+		if File == "" && len(args) < 1 {
+			return errors.New("Accepts 1 argument received 0")
+		}
+		return nil
+	},
+	DisableFlagsInUseLine: true,
+	Example:               `Go_Cobra_CLI android hello.zip (or File Path)`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("android called")
+		var fileName string
+		var err error
+		var argument string
+
+		if File != "" {
+			argument = File
+		} else {
+			argument = args[0]
+		}
+
+		fileExists, err := util.FileExists(argument)
+
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		if fileExists {
+			fileName, err = filepath.Abs(argument)
+
+			if err != nil {
+				fmt.Println(err.Error())
+			}
+
+		} else {
+			fmt.Printf("File %v doen not exist", argument)
+			return
+		}
+
+		wd, err := os.Getwd()
+
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		util.Unzip(fileName, wd)
+
+		os.Chdir(util.FilenameWithoutExtension(fileName))
+
+		wd, err = os.Getwd()
+
+		if err != nil {
+			fmt.Println(err.Error())
+		}
+
+		commandCode := exec.Command("android", wd)
+		err = commandCode.Run()
+
+		if err != nil {
+			fmt.Println("Android Executable File not found in %PATH%")
+		}
 	},
 }
 
